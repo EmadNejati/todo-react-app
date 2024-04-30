@@ -3,10 +3,10 @@ import TodoListHeader from "../Atoms/TodoListHeader";
 
 import "./TodoListContainer.css"
 
-function TodoListContainer(props) {
+function TodoListContainer({taskList}) {
     return (<div className="list__container">
         <TodoListHeader />
-        <TodoList />
+        <TodoList taskList={taskList}/>
     </div>)
 }
 

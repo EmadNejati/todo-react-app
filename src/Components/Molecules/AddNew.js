@@ -4,14 +4,12 @@ import ColorPicker from "../Atoms/ColorPicker";
 import DatePicker from "../Atoms/DatePicker";
 import "./AddNew.css";
 
-function AddNew(props) {
-    const submitNewTask = () => {
+function AddNew({newTask,setNewTask,submitNewTask}) {
 
-    }
     return (<div className="new__task__container">
-        <InputTxt />
+        <InputTxt newTask={newTask} setNewTask={setNewTask}/>
         <DatePicker />
-        <AddBtn onClick={submitNewTask} />
+        <AddBtn submitNewTask={submitNewTask} />
     </div>)
 }
 

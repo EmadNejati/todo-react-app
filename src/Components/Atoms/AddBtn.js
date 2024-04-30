@@ -1,7 +1,7 @@
 import "./AddBtn.css"
 
-function AddBtn() {
-    return (<button className="btn add__btn" >Add</button>)
+function AddBtn({submitNewTask}) {
+    return (<button className="btn add__btn" onClick={submitNewTask} >Add</button>)
 }
 
 export default AddBtn
