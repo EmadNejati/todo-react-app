@@ -12,7 +12,9 @@ function TodoList({ taskList }) {
                     key={index}
                     onDoubleClick={(e)=>doneTask(e)}
                 >
-                    {item.text}
+                    {item.text }
+                    {"\n"}
+                    {item.date}
                 </li>
             )}
         </ol>

@@ -6,15 +6,16 @@ import { useState } from "react"
 
 function TodoListComponent() {
     let [newTask,setNewTask]=useState("")
-    let [taskList,setTaskList]=useState([{text:"this is first sample"},{text:"this is second sample"}])
+    let [newDate,setNewDate]=useState("")
+    let [taskList,setTaskList]=useState([{text:"this first static sample",date:"2024/02/16"}])
     const submitNewTask = () => {
-        const newTaskList=[...taskList,{text:newTask}]
+        const newTaskList=[...taskList,{text:newTask , date:newDate}]
         setTaskList(newTaskList)
     }
     return (<div className="full_modul__container">
         <TodoListContainer taskList={taskList}  />
         {/* <AddNewTaskBtn  /> */}
-        <AddNew newTask={newTask} setNewTask={setNewTask} submitNewTask={submitNewTask}/>
+        <AddNew newTask={newTask}  setNewTask={setNewTask} submitNewTask={submitNewTask} newDate={newDate} setNewDate={setNewDate}/>
     </div>)
 }
 

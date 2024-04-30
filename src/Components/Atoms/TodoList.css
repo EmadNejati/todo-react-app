@@ -5,12 +5,12 @@
 }
 
 .todo__list li{
-    padding-left: 10px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    height: 3rem;
+    height: auto;
     list-style: none;
+    padding: 10px ;
     
 }
 
