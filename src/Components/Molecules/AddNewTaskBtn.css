@@ -1,0 +1,10 @@
+.add__new__task__button__card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width:  50%;
+    height: 100%;
+    border:  2px solid slategray;
+    border-radius: 1rem;
+}

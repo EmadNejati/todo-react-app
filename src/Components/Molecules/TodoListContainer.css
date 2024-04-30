@@ -1,0 +1,10 @@
+.list__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width:  50%;
+    height: 100%;
+    border:  2px solid slategray;
+    border-radius: 1rem;
+}

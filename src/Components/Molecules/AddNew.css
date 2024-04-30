@@ -1,0 +1,11 @@
+.new__task__container{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 50px;
+    align-items: center;
+    width:  50%;
+    height: 100%;
+    border:  2px solid slategray;
+    border-radius: 1rem;
+}

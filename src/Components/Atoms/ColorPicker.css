@@ -1,0 +1,8 @@
+.color__picker{
+    border-radius: 50%;
+    width: 3rem;
+    height: 3rem;
+    border: 3px solid transparent;
+    background: linear-gradient(140deg, red, orange, yellow, green, indigo, blue) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+}
