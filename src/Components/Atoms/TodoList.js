@@ -1,24 +1,41 @@
-import { useState } from "react"
-import "./TodoList.css"
+import { RiDeleteBin6Line } from "react-icons/ri";
+import { RiEdit2Line } from "react-icons/ri";
+import "./TodoList.css";
 
 function TodoList({ taskList }) {
-    const doneTask=(e)=>{
-        console.log(e);
-    }
-    return (<div className="todo__list">
-        <ol id="taskList">
-            {taskList.map((item, index) =>
-                <li
-                    key={index}
-                    onDoubleClick={(e)=>doneTask(e)}
-                >
-                    <div>{item.title}</div>
-                    <div>{item.text }</div>
-                    <div>{item.date}</div>
-                </li>
-            )}
-        </ol>
-    </div>)
+  const doneTask = (e) => {
+    console.log(e);
+  };
+  const oddTitleStyle = {
+    backgroundColor: "red ",
+    width: "100%",
+    color: "white",
+    backgroundColor: "rgb(2 203 203)",
+    fontWeight:"bolder"
+  };
+  const evenTitleStyle = {
+    color: "white",
+    backgroundColor: "#9e9e9e",
+    width: "100%",
+    fontWeight:"bolder"
+  };
+  return (
+    <div className="todo__list">
+      <ol id="taskList">
+        {taskList.map((item, index) => (
+          <li key={index} onDoubleClick={(e) => doneTask(e)}>
+            <div style={index % 2 === 0 ? evenTitleStyle : oddTitleStyle}>
+              {item.title}
+            </div>
+            <div>{item.text}</div>
+            <div>{item.date}</div>
+            {<RiDeleteBin6Line />}
+            {<RiEdit2Line />}
+          </li>
+        ))}
+      </ol>
+    </div>
+  );
 }
 
-export default TodoList
+export default TodoList;

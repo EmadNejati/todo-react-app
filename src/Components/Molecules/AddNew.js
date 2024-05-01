@@ -16,16 +16,11 @@ function AddNew({
   newTitle,
   setNewTitle,
 }) {
-  const [titleStyle,setTitleStyle] = useState({
-    backgroundColor: "red ",
-    width:"100%",
-    height:"20%",
-    fontSize: "2rem"
-  });
+
   return (
     <div className="new__task__container">
       <TitleText
-        style={titleStyle}
+        
         newTitle={newTitle}
         setNewTitle={setNewTitle}
       />
