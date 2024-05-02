@@ -9,16 +9,36 @@ function TodoListComponent() {
   let [newTitle, setNewTitle] = useState("");
   let [newDate, setNewDate] = useState("");
   let [taskList, setTaskList] = useState([
-    { title: "static test 1", text: "this static sample number 1", date: "2024/02/16" },
-    { title: "static test 2", text: "this static sample number 2", date: "2025/05/26" },
-    { title: "static test 3", text: "this static sample number 3", date: "2023/02/10" },
-    { title: "static test 4", text: "this static sample number 4", date: "2020/11/02" },
-    { title: "static test 5", text: "this static sample number 5", date: "2021/07/16" }
+    {
+      title: "static test 1",
+      text: "this static sample number 1",
+      date: "2024/02/16",
+    },
+    {
+      title: "static test 2",
+      text: "this static sample number 2",
+      date: "2025/05/26",
+    },
+    {
+      title: "static test 3",
+      text: "this static sample number 3",
+      date: "2023/02/10",
+    },
+    {
+      title: "static test 4",
+      text: "this static sample number 4",
+      date: "2020/11/02",
+    },
+    {
+      title: "static test 5",
+      text: "this static sample number 5",
+      date: "2021/07/16",
+    },
   ]);
   const submitNewTask = () => {
     const newTaskList = [
-      ...taskList,
       { title: newTitle, text: newTask, date: newDate },
+      ...taskList,
     ];
     if (newTitle && newTask && newDate) {
       setTaskList(newTaskList);
