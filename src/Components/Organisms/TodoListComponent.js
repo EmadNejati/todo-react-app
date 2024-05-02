@@ -10,13 +10,13 @@ function TodoListComponent() {
   let [newDate, setNewDate] = useState("");
   let [taskList, setTaskList] = useState([
     {
-      title: "static test 1",
-      text: "this static sample number 1",
+      title: "static test 5",
+      text: "this static sample number 5",
       date: "2024/02/16",
     },
     {
-      title: "static test 2",
-      text: "this static sample number 2",
+      title: "static test 4",
+      text: "this static sample number 4",
       date: "2025/05/26",
     },
     {
@@ -25,13 +25,13 @@ function TodoListComponent() {
       date: "2023/02/10",
     },
     {
-      title: "static test 4",
-      text: "this static sample number 4",
+      title: "static test 2",
+      text: "this static sample number 2",
       date: "2020/11/02",
     },
     {
-      title: "static test 5",
-      text: "this static sample number 5",
+      title: "static test 1",
+      text: "this static sample number 1",
       date: "2021/07/16",
     },
   ]);
@@ -49,7 +49,7 @@ function TodoListComponent() {
   };
   return (
     <div className="full_modul__container">
-      <TodoListContainer taskList={taskList} />
+      <TodoListContainer taskList={taskList} setTaskList={setTaskList} />
       {/* <AddNewTaskBtn  /> */}
       <AddNew
         newTask={newTask}
