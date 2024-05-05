@@ -8,9 +8,11 @@ function TodoList({
   currentTaskTitle,
   currentTaskCaption,
   currentTaskDate,
+  currentTaskId,
   setCurrentTaskTitle,
   setCurrentTaskCaption,
-  setCurrentTaskDate
+  setCurrentTaskDate,
+  setCurrentTaskId
 }) {
   const doneTask = (e) => {
     console.log(e);
@@ -24,6 +26,7 @@ function TodoList({
     setCurrentTaskTitle(taskList[index].title)
     setCurrentTaskCaption(taskList[index].text)
     setCurrentTaskDate(taskList[index].date)
+    setCurrentTaskId(taskList[index].id)
     console.log(currentItem);
   }
   const oddTitleStyle = {
