@@ -2,13 +2,29 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { RiEdit2Line } from "react-icons/ri";
 import "./TodoList.css";
 
-function TodoList({ taskList, setTaskList }) {
+function TodoList({
+  taskList,
+  setTaskList,
+  currentTaskTitle,
+  currentTaskCaption,
+  currentTaskDate,
+  setCurrentTaskTitle,
+  setCurrentTaskCaption,
+  setCurrentTaskDate
+}) {
   const doneTask = (e) => {
     console.log(e);
   };
   function delListItem(index) {
-    const newListItem = taskList.filter((item,currentIndex)=> currentIndex !== index);
+    const newListItem = taskList.filter((item, currentIndex) => currentIndex !== index);
     setTaskList(newListItem);
+  }
+  function editlistItem(index) {
+    const currentItem = taskList[index]
+    setCurrentTaskTitle(taskList[index].title)
+    setCurrentTaskCaption(taskList[index].text)
+    setCurrentTaskDate(taskList[index].date)
+    console.log(currentItem);
   }
   const oddTitleStyle = {
     backgroundColor: "red ",
@@ -34,7 +50,7 @@ function TodoList({ taskList, setTaskList }) {
             <div>{item.text}</div>
             <div>{item.date}</div>
             {<RiDeleteBin6Line onClick={(e) => delListItem(index)} />}
-            {<RiEdit2Line />}
+            {<RiEdit2Line onClick={(e) => editlistItem(index)} />}
           </li>
         ))}
       </ol>
