@@ -17,8 +17,8 @@ function TodoList({
   setCurrentStatus
 }) {
   const doneTask = (index) => {
-    const tempCurrentList = taskList
-    tempCurrentList[index].status= !tempCurrentList[index].status
+    const tempCurrentList = [...taskList]
+    tempCurrentList[index].status = !tempCurrentList[index].status
     setTaskList(tempCurrentList)
   };
   function delListItem(index) {
@@ -46,14 +46,25 @@ function TodoList({
     width: "100%",
     fontWeight: "bolder",
   };
-  const doneTaskStyle={
-    backgroundColor:"red",
+  const doneTaskStyle = {
+    backgroundColor: "#9e9e9e",
+    opacity: "0.4",
+    color: "black"
+  }
+  const doneTaskStylePrim = {
+    backgroundColor: "#02cbcb",
+    opacity: "0.4",
+    color: "black"
   }
   return (
     <div className="todo__list">
       <ol id="taskList">
         {taskList.map((item, index) => (
-          <li key={index} style={item.status === true ? doneTaskStyle:{}} onDoubleClick={() => doneTask(index)}>
+          <li key={index} style={
+            item.status === true
+              ? index % 2 === 0 ? doneTaskStyle:doneTaskStylePrim
+              : {}
+          } onDoubleClick={() => doneTask(index)}>
             <div style={index % 2 === 0 ? evenTitleStyle : oddTitleStyle}>
               {item.title}
             </div>
