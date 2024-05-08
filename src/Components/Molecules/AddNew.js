@@ -15,6 +15,8 @@ function AddNew({
   setNewDate,
   newTitle,
   setNewTitle,
+  status,
+  setStatus
 }) {
 
   return (

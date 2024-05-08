@@ -9,13 +9,17 @@ function TodoList({
   currentTaskCaption,
   currentTaskDate,
   currentTaskId,
+  currentStatus,
   setCurrentTaskTitle,
   setCurrentTaskCaption,
   setCurrentTaskDate,
-  setCurrentTaskId
+  setCurrentTaskId,
+  setCurrentStatus
 }) {
-  const doneTask = (e) => {
-    console.log(e);
+  const doneTask = (index) => {
+    const tempCurrentList = taskList
+    tempCurrentList[index].status= !tempCurrentList[index].status
+    setTaskList(tempCurrentList)
   };
   function delListItem(index) {
     const newListItem = taskList.filter((item, currentIndex) => currentIndex !== index);
@@ -42,18 +46,21 @@ function TodoList({
     width: "100%",
     fontWeight: "bolder",
   };
+  const doneTaskStyle={
+    backgroundColor:"red",
+  }
   return (
     <div className="todo__list">
       <ol id="taskList">
         {taskList.map((item, index) => (
-          <li key={index} onDoubleClick={(e) => doneTask(e)}>
+          <li key={index} style={item.status === true ? doneTaskStyle:{}} onDoubleClick={() => doneTask(index)}>
             <div style={index % 2 === 0 ? evenTitleStyle : oddTitleStyle}>
               {item.title}
             </div>
             <div>{item.text}</div>
             <div>{item.date}</div>
-            {<RiDeleteBin6Line onClick={(e) => delListItem(index)} />}
-            {<RiEdit2Line onClick={(e) => editlistItem(index)} />}
+            {<RiDeleteBin6Line onClick={() => delListItem(index)} />}
+            {<RiEdit2Line onClick={() => editlistItem(index)} />}
           </li>
         ))}
       </ol>

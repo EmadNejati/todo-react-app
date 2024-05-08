@@ -12,12 +12,13 @@ function TodoListContainer(
         currentTaskCaption,
         currentTaskDate,
         currentTaskId,
-
+        currentStatus,
         
         setCurrentTaskTitle,
         setCurrentTaskCaption,
         setCurrentTaskDate,
         setCurrentTaskId,
+        setCurrentStatus
     }) {
     return (<div className="list__container">
         <TodoListHeader />
@@ -29,11 +30,13 @@ function TodoListContainer(
             currentTaskCaption={currentTaskCaption}
             currentTaskDate={currentTaskDate}
             currentTaskId = {currentTaskId}
+            currentStatus ={currentStatus}
 
             setCurrentTaskTitle={setCurrentTaskTitle}
             setCurrentTaskCaption={setCurrentTaskCaption}
             setCurrentTaskDate={setCurrentTaskDate}
             setCurrentTaskId = {setCurrentTaskId}
+            setCurrentStatus={setCurrentStatus}
         />
     </div>)
 }
